@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>demo</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+	var colorSet = []
+	$("#main li").each( function (i) {
+		colorSet[i] = $(this).attr("class");	
+	});
+	$(".js-btn a:eq(0)").bind("click", function (e) {
+		$("#main li").attr("class","red");
+		e.preventDefault();
+	});
+	$(".js-btn a:eq(1)").bind("click", function (e) {
+		$("#main li").attr("class","pink");
+		e.preventDefault();
+	});
+	$(".js-btn a:eq(2)").bind("click", function (e) {
+		$("#main li").each( function (i) {
+			$(this).attr("class", colorSet[i]);
+		});
+		e.preventDefault();
+	});
+	$(".js-btn a:eq(3)").bind("click", function (e) {
+		var maxH = $("html").height();
+		$($("#main li").get().reverse()).each( function (i) {
+			var obj = $(this).offset();
+			var x = obj.left;
+			var y = obj.top;
+			$(this).css({"position":"absolute","top":y, "left":x});	
+			$(this).animate({"top": maxH,"opacity":0}, "slow");
+		});
+		e.preventDefault();
+	});
+});
+</script>
+<style>
+a {
+color:#333;	
+}
+mark {
+background-color:transparent;	
+}
+mark.red {
+color:#f00;	
+}
+mark.pink {
+color:#FF00FF;	
+}
+mark.def {
+font-weight:bold;	
+}
+mark.move {
+font-weight:bold;
+color:#00F;	
+}
+
+</style>
+</head>
+<!-- <head>~</head>の間にページのタイトル、文字エンコードの種類、スタイルシートの読み込みなど、を記入します。
+この範囲に書かれたものはブラウザには表示されません。 -->	
+<body>
+	<!-- <body>~</body>に書かれたものはブラウザに表示されます。 -->
+	<header>
+		<h1>サンプルページ</h1>
+	</header>
+	<div id="main">
+		<ul>
+			<li class="red">赤</li>
+			<li class="yellow">黄</li>
+			<li class="yellowishGreen">黄緑</li>
+			<li class="green">緑</li>
+			<li class="lightBlue">水色</li>
+			<li class="blue">青</li>
+			<li class="purple">紫</li>
+			<li class="pink">桃</li>
+			<li class="orange">橙</li>
+		</ul>
+	</div>
+    <ul class="js-btn">
+        <li><a href="#">全ての色を<mark class="red">赤</mark>に変える</a></li>
+        <li><a href="#">全ての色を<mark class="pink">桃</mark>に変える</a></li>
+        <li><a href="#">全ての色を<mark class="def">元</mark>に戻す</a></li>
+        <li><a href="#">全てのボックスを<mark class="move">動かす</mark></a></li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CSS勉強会資料</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="lib/zenburn.css">
+<!-- sample用CSS -->
+<link rel="stylesheet" href="css/css3sample.css">
+<script src="lib/jquery.min.js"></script>
+<script src="js/misc.js"></script>
+</head>
+
+<body>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div id="main">
+	<section>
+		<div class="mod-page title">
+			<div>
+				<div>
+					<h1>CSS勉強会資料</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<p>■目次</p>
+						<ul>
+							<li><a href="#/2">1.骨組み – HTML</a></li>
+							<li><a href="#/3">2.デザイン担当 – スタイルシート</a></li>
+							<li><a href="#/4">3.HTMLとCSSの実演</a></li>
+							<li><a href="#/5">4.ブラウザについて知ろう！</a></li>
+							<li><a href="#/6">5.応用 - CSS3ではこんなことができる！</a></li>
+							<li><a href="#/7">6.応用 - Fuck'n PSDデータとはどんなんや</a></li>
+							<li><a href="#/8">おまけ - jQueryの入門編</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>1.骨組み – HTML</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<p><em>HTML</em> = Hyper Text Markup Language<br>（はいぱーてきすとまーくあっぷらんげーじ）</p>
+						<p>Webサイト用の<em>文書</em>を書くための言語</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>■書き方のルール</h2>
+						<dl>
+							<dt>基本形</dt>
+							<dd><pre><em>&lt;開始タグ&gt;</em>ここに内容<em>&lt;/終了タグ&gt;</em></pre></dd>
+						</dl>
+						<dl>
+							<dt>入れ子も可</dt>
+							<dd><pre><em>&lt;開始タグA&gt;&lt;開始タグB&gt;</em>ここに内容<em>&lt;/終了タグB&gt;&lt;/終了タグA&gt; </em></pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>■タグの意味</h2>
+						<p>それぞれのタグには意味があって、HTML は文章に意味をつけていく作業</p>
+						<pre><em>&lt;h1&gt;</em> … ページの中の一番目に大きい見出しを意味します。</pre>
+						<pre><em>&lt;h2&gt;</em> … ページの中の二番目に大きい見出しを意味します。</pre>
+						<pre><em>&lt;h3&gt;</em> … ページの中の三番目に大きい見出しを意味します。</pre>
+						<pre><em>&lt;ul&gt;</em> … 箇条書きリストを意味します。</pre>
+						<pre><em>&lt;li&gt;</em> … リストの中のひとつひとつを意味します。</pre>
+						<p>など</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>2.デザイン担当 <br>– スタイルシート</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<p><em>CSS</em> = Cascading Style Sheets<br>（かすけーでぃんぐすたいるしーと）</p>
+						<p>Webサイト用の<em>スタイル（デザイン）</em>を指定</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>■書き方のルール</h2>
+						<pre><em>セレクタ { プロパティ: 値; }</em></pre>
+						<dl>
+							<dt>・例</dt>
+							<dd><pre>p { color: gray; }</pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>■セレクタとは？</h2>
+						<h3>※HTMLの要素を指定する方法</h3>
+						<pre>h1,h2,h3,div,span,ul,li,img,a…など。</pre>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>※「id」と「class」を使う方法</h3>
+						<dl>
+							<dt>・HTML</dt>
+							<dd><pre>&lt;p <em>id</em>=&quot;test&quot;&gt;あいうえお&lt;/p&gt;<br>&lt;p <em>class</em>=&quot;test2&quot;&gt;あいうえお&lt;/p&gt;<br>&lt;span <em>class</em>=&quot;test2&quot;&gt;あいうえお&lt;/span&gt;</pre></dd>
+						</dl>
+						<dl>
+							<dt>・CSS</dt>
+							<dd><pre><em>#</em>test { color: red; } …idの指定<br><em>.</em>test2 { color: blue; } …classの指定</pre></dd>
+						</dl>
+						<p>id…ページ中に<em>1度しか</em>登場しない<br>class…ページ中に<em>何度でも</em>登場する</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>※子孫要素に適用する方法</h3>
+						<dl>
+							<dt>・HTML</dt>
+							<dd><pre><em>&lt;div&gt;&lt;p&gt;</em>あいうえお<em>&lt;/p&gt;&lt;/div&gt;</em></pre></dd>
+						</dl>
+						<dl>
+							<dt>・CSS</dt>
+							<dd><pre><em>div p</em> { color: black ; }</pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>※擬似要素・擬似クラスを使う</h3>
+						<dl>
+							<dt>・CSS</dt>
+							<dd><pre>div<em>:hover</em> { background: #eee ; }…オンマウス時に適用</pre></dd>
+							<dd><pre>p<em>:first-child</em> { font-weight: bold ; }…最初に現れる要素にだけ適用</pre></dd>
+							<dd><pre>p<em>:first-letter</em> { font-size: 32px ; }…最初に現れる文字にだけ適用</pre></dd>
+						</dl>
+						<p>など</p>
+						<p>詳しくは→<a target="_blank" href="http://weboook.blog22.fc2.com/blog-entry-268.html">意外と知らない!?CSSセレクタ20個のおさらい</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>■プロパティとは？</h2>
+						<ul>
+							<li>color … 要素内の文字の色を指定します。</li>
+							<li>background … 要素に背景を指定します。</li>
+							<li>border … 要素をぐるっと枠線で囲みます（太さや色などを指定）。</li>
+							<li>width … 要素の幅を指定します。</li>
+						</ul>
+						<p>など</p>
+						<p>なお、プロパティによって指定できる値が変わります。</p>
+						<p>詳しくは→<a target="_blank" href="http://www.tagindex.com/stylesheet/properties/index.html">スタイルシート［CSS］/プロパティ一覧 - TAG index Webサイト</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>3.HTMLとCSSの実演</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="present">
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>では、実際に<br>CSSを書いてみましょう。</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="present">
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>■用意されたhtmlにCSSを指定して、<br>デザインを完成させよう！！<br>（所要時間：5分くらい）</h2>
+						<pre>課題1 … テキスト色を変えてみよう</pre>
+						<pre>課題2 … テキストの配置を変えてみよう</pre>
+						<pre>課題3 … 要素に枠線を付けてみよう</pre>
+						<pre>課題4 … グラデーションを付けてみよう</pre>
+						<a href="./demo.zip">→課題をダウンロード</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>4.ブラウザについて知ろう！</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>ブラウザごとに使える技術が違う！</h2>
+						<div>例：
+							<ul>
+								<li>iPhone,Androidの代表的な違いだとiPhoneではできる太文字処理がAndroidではできない。（日本語は）</li>
+								<li>一部のAndroidではグラデーション背景が汚い</li>
+							</ul>…などなど</div>
+							<div>
+								<dl>
+									<dt><h3>詳細</h3></dt>
+									<dd><a href="http://caniuse.com/" target="_blank">When can I use... Support tables for HTML5, CSS3, etc</a></dd>
+								</dl>
+							</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>5.応用 - CSS3ではこんなことができる！</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>CSS3の事例：1</h2>
+						<div class="sample">
+							
+							<input id="btnSubmit" type="submit" value="登録する">
+							
+						</div>
+						<dl>
+							<dt>html</dt>
+							<dd><pre>&lt;input <em>id=&quot;btnSubmit&quot;</em> type=&quot;submit&quot; value=&quot;登録する&quot;&gt;</pre></dd>
+						</dl>
+						<dl>
+							<dt>CSS3</dt>
+							<dd><pre><em>#btnSubmit</em> {<br>width: 260px;<br>height: 44px;<br>border-radius: 4px;<br>background-image: linear-gradient(to top, #FF9600, #FFBC5C);<br>color: #864500;<br>text-shadow: 1px 1px rgba(255, 209, 144, 0.8),1px 1px 1px rgba(0, 0, 0, 0.3);<br>}</pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>解説</h3>
+						<dl>
+							<dt>CSS3</dt>
+							<dd><pre><em>#btnSubmit</em> {<br>width: 260px; <em>…幅</em><br>height: 44px; <em>…高さ</em><br>border-radius: 4px; <em>…角丸の表現</em><br>background-image: linear-gradient(to top, #FF9600, #FFBC5C);<br> <em>…グラデーション背景</em><br>color: #864500; <em>…文字色</em><br>text-shadow: 1px 1px rgba(255, 209, 144, 0.8),1px 1px 1px rgba(0, 0, 0, 0.3);<br> <em>…テキストシャドウ</em><br>}</pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>CSS3の事例：2</h2>
+						<div class="sample">
+							
+							<div class="gaugeBox">
+								<div class="gauge g75"></div>
+							</div>
+							
+						</div>
+						<dl>
+							<dt>html</dt>
+							<dd><pre>&lt;div <em>class=&quot;gaugeBox&quot;</em>&gt;&lt;div class=<em>&quot;gauge g75&quot;</em>&gt;&lt;/div&gt;&lt;/div&gt;</pre></dd>
+						</dl>
+						<dl>
+							<dt>CSS3</dt>
+							<dd><pre class="samplePre"><em>.gaugeBox</em> {<br>width: 100%;<br>height: 16px;<br>border-radius: 9px;<br>box-shadow: 0 2px 3px 1px rgba(0, 0, 0, .3) inset,<br>     0px 2px 3px 1px rgba(255, 255, 255, .2);<br>background-image: linear-gradient(top, #A60A2C, #CE1644);<br>background-repeat: repeat-x;<br>padding: 1px;<br>}<br><em>.gauge</em> {<br>border-radius: 8px;<br>box-shadow: 0 -2px 3px 1px rgba(0, 0, 0, .1) inset,<br>   0px 2px 3px 1px rgba(255, 255, 255, .2) inset,<br>   0px 0 3px 1px rgba(0, 0, 0, .4);<br>background-image: linear-gradient(top, #FFBE60, #FF9600);<br>background-repeat: repeat-x;<br>height: 16px;<br>}<br><em>.g75</em> {<br>width: 75%;<br>}
+							</pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>解説</h3>
+						<dl>
+							<dt>CSS3</dt>
+							<dd><pre class="samplePre2"><em>.gaugeBox</em> {<br>width: 100%; <em>…幅</em><br>height: 16px; <em>…高さ</em><br>border-radius: 9px; <em>…角丸の表現</em><br>box-shadow: 0 2px 3px 1px rgba(0, 0, 0, .3) inset,<br>     0px 2px 3px 1px rgba(255, 255, 255, .2); <em>…影</em><br>background-image: linear-gradient(top, #A60A2C, #CE1644); <br><em>…グラデーション背景</em><br>background-repeat: repeat-x; <em>…背景の繰り返し指定</em><br>padding: 1px; <em>…領域内のスペースを指定</em><br>}<br><em>.gauge</em> {<br>border-radius: 8px; <em>…角丸の表現</em><br>box-shadow: 0 -2px 3px 1px rgba(0, 0, 0, .1) inset,<br>   0px 2px 3px 1px rgba(255, 255, 255, .2) inset,<br>   0px 0 3px 1px rgba(0, 0, 0, .4); <em>…影</em><br>background-image: linear-gradient(top, #FFBE60, #FF9600);<br>background-repeat: repeat-x; <em>…グラデーション背景</em><br>height: 16px; <em>…高さ</em><br>}<br><em>.g75</em> {<br>width: 75%; <em>…幅</em><br>}
+							</pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h3>複雑なデザインじゃなければCSS3で実装可能！<br>＝ファイルサイズの圧縮<br>＝ユーザー負担の軽減など</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>6.応用 - Fuck'n PSDデータとはどんなんや</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<p>例）</p>
+						<ul>
+							<li>色の濃淡を変えるときも、めんどくさがらずにカラーコードで</li>
+							<li>マージンは統一してほしい</li>
+							<li>見切れてる背景画像も切らないで！</li>
+							<li>Retina対応時は必ずpxは2の倍数で</li>
+							<li>滲んだ画像は切りづらい。。</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>おまけ - jQueryの入門編</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h2>jQueryとは？</h2>
+						<p>JavaScriptを簡単に扱うための仕組みが詰まったオープンソースのライブラリです。</p>
+						<p>その他のメリット</p>
+						<ul>
+							<li>クロスブラウザ<em>（いろんなブラウザで使えるよ）</em></li>
+							<li>軽量かつ高速<em>（圧縮版で26KB）</em></li>
+							<li>MITとGPLのデュアルライセンス<em>（商用利用、ソース改変、再配布OK）</em></li>
+							<li>ドキュメントが充実</li>
+							<li>ノンプログラマにも優しいセレクタAPI<em>（CSSセレクタの知識は必須！！）</em></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>準備</h3>
+						<p>&lt;script&gt;タグでjQueryを読み込みます。&lt;/script&gt;</p>
+						<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;<em>jquery.js</em>&quot;&gt;&lt;/script&gt;<br>&lt;script type=&quot;text/javascript&quot;&gt;<br>//jQueryの利用OK<br>&lt;/script&gt;</pre>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>書き方（基本形）</h3>
+						<pre>$(<em>セレクタ</em>).<em>メソッド(引数)</em></pre>
+						<dl>
+							<dt>・例</dt>
+							<dd><pre>$(&quot;<em>div</em>&quot;).<em>css</em>(&quot;<em>color</em>&quot;,&quot;<em>red</em>&quot;);</pre></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>■セレクタ</h3>
+						<p>CSSのセレクタと同じ</p>
+						<dl>
+							<dt>例）</dt>
+							<dd><pre>$(&quot;<em>#hoge</em>&quot;) // IDセレクタ</pre></dd>
+							<dd><pre>$(&quot;<em>.huga</em>&quot;) // classセレクタ</pre></dd>
+							<dd><pre>$(&quot;<em>p, div.huga</em>&quot;) // グループ化</pre></dd>
+							<dd><pre>$(&quot;<em>ul > li</em>&quot;) // 子セレクタ</pre></dd>
+							<dd><pre>$(&quot;<em>td:even</em>&quot;) // 偶数のもの</pre></dd>
+							<dd>などなど。</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h3>■メソッド</h3>
+						<dl>
+							<dt>種類</dt>
+							<dd>・CSS,Attributes（CSS、属性の操作）</dd>
+							<dd>・Traversing（要素間の移動、検索）</dd>
+							<dd>・Manipulation（要素の追加や削除など）</dd>
+							<dd>・Event（イベント関連）</dd>
+							<dd>・Effects（エフェクト関連）</dd>
+							<dd>・Ajax（Ajax関連）</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h4>※CSS,Attributes</h4>
+						<dl>
+							<dt>colorをredに設定</dt>
+							<dd><pre>$(&quot;div&quot;).<em>css</em>(&quot;color&quot;,&quot;red&quot;);</pre></dd>
+						</dl>
+						<dl>
+							<dt>colorを取得</dt>
+							<dd><pre>$(&quot;div&quot;).<em>css</em>(&quot;color&quot;);</pre></dd>
+						</dl>
+						<dl>
+							<dt>幅を取得</dt>
+							<dd><pre>$(&quot;a img&quot;).<em>width</em>();</pre></dd>
+						</dl>
+						<dl>
+							<dt>画像の幅に150px をセット</dt>
+							<dd><pre>$(&quot;a img&quot;).<em>width</em>(&quot;150px&quot;);</pre></dd>
+						</dl>
+						<p>など</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h4>※Traversing</h4>
+						<dl>
+							<dt>#navi 内のすべての liを返す（指定する）</dt>
+							<dd><pre>$(&quot;#navi&quot;).<em>find</em>(&quot;li&quot;);</pre></dd>
+						</dl>
+						<dl>
+							<dt>#navi liの中の最初の li を返す</dt>
+							<dd><pre>$(&quot;#navi li&quot;).<em>first</em>();</pre></dd>
+						</dl>
+						<dl>
+							<dt>#navi liの中の最後の li を返す</dt>
+							<dd><pre>$(&quot;#navi li&quot;).<em>last</em>();</pre></dd>
+						</dl>
+						<dl>
+							<dt>#logo の次の要素を返す</dt>
+							<dd><pre>$(&quot;#logo&quot;).<em>next</em>();</pre></dd>
+						</dl>
+						<p>など</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h4>※Manipulation</h4>
+						<dl>
+							<dt>指定した要素の一番最初に、HTML を追加</dt>
+							<dd><pre>$(&quot;#navi ul&quot;).<em>prepend</em>('&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;');</pre></dd>
+						</dl>
+						<dl>
+							<dt>指定した要素の後ろに HTML を追加</dt>
+							<dd><pre>$(&quot;#logo&quot;).<em>after</em>(&quot;&lt;h1&gt;Web Design&lt;/h1&gt;&quot;);</pre></dd>
+						</dl>
+						<dl>
+							<dt>指定した要素を包んで HTML を追加</dt>
+							<dd><pre>$(&quot;#header&quot;).<em>wrap</em>('&lt;div id="wrapper"&gt;&lt;/div&gt;');</pre></dd>
+						</dl>
+						<p>など</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h4>※Event</h4>
+						<pre>$(<em>セレクタ</em>).<em>イベント</em>(function(){<br>/* ここに処理 */<br>});</pre>
+						<p>例）</p>
+						<pre>$(&quot;<em>#logo</em>&quot;).<em>hover</em>(function(){<br>$(this).css(&quot;color&quot;,&quot;red&quot;);<br>});</pre>
+						<p>基本的にイベント系のメソッドは、他のメソッドと組み合わせて使います。</p>
+						<p>など</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h4>※Effects</h4>
+						<dl>
+							<dt>表示されてるものを隠したり、非表示のもを表示</dt>
+							<dd><pre>$(&quot;.hidden&quot;).<em>toggle</em>();</pre></dd>
+						</dl>
+						<dl>
+							<dt>フェードインさせて表示</dt>
+							<dd><pre>$(&quot;.fade&quot;).<em>fadeIn</em>();</pre></dd>
+						</dl>
+						<dl>
+							<dt>アニメーションしながら、高さを 0 に</dt>
+							<dd><pre>$(&quot;img&quot;).<em>animate</em>({ &quot;height&quot; : &quot;0px&quot; });</pre></dd>
+						</dl>
+						<p>など</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page plain">
+				<div>
+					<div>
+						<h4>■jquery参考リンク</h4>
+						<ul>
+							<li><a href="http://semooh.jp/jquery/" target="_blank">jQuery日本語リファレンス</a></li>
+							<li><a href="http://ascii.jp/elem/000/000/498/498710/" target="_blank">40分で覚える！jQuery速習講座</a></li>
+							<li><a href="http://www.slideshare.net/hayatomizuno/jquery-7665168" target="_blank">ノンプログラマーのためのjQuery入門</a></li>
+							<li><a href="http://webdesignrecipes.com/jquery-beginners-guide-for-web-design/" target="_blank">CSSは分かるけど jQuery は苦手 … という人が jQuery に親しんでくれるといいなーと思って書きました</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h4>■サンプル</h4>
+						<a href="./samples/demo/jquery_sample.html" target="_blank">jQuery</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+	<section>
+		<section>
+			<div class="mod-page break">
+				<div>
+					<div>
+						<h1>おわり。</h1>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+
+</div>
+<aside class="controls"> <a class="left" href="#">&#x25C4;</a> <a class="right" href="#">&#x25BA;</a> <a class="up" href="#">&#x25B2;</a> <a class="down" href="#">&#x25BC;</a> </aside>
+
+<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+<div class="progress"><span></span></div>
+<script src="js/reveal.js"></script> 
+<script src="lib/highlight.js"></script> 
+<script>
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// Styling themes, only affects transitions for now
+				theme: 'default' // default/concave/linear
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+</body>
+</html>
